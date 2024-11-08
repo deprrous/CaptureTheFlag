@@ -1,0 +1,49 @@
+Step 1: Convert MP4 to H.261
+To convert an MP4 file to H.261 format, use FFmpeg with the appropriate codec and 
+ensure that you specify a valid resolution for H.261 (176x144 or 352x288):
+
+ffmpeg -i input.mp4 -vf scale=176:144 -c:v h261 -f avi output.avi
+
+Explanation of the Command:
+-i input.mp4: Specifies the input MP4 file.
+-vf scale=352:288: Resizes the video to 352x288, which is a valid resolution for H.261.
+-c:v h261: Specifies the H.261 codec for video compression.
+-f avi: Sets the output format to AVI (H.261 is typically not used in MP4).
+output.avi: The name of the output file.
+
+
+
+Step 2: Analyze the H.261 Output
+After converting to H.261, you can analyze the output file to check its properties:
+
+ffprobe output.avi
+
+
+Step 3: Compare File Sizes
+To see the difference in file sizes between the original MP4 and the converted H.261 AVI file, use:
+
+ls -lh input.mp4 output.avi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Step 4: Additional Conversion to MP4 (if needed)
+If you later want to convert the H.261 AVI file back to MP4, you can use:
+
+ffmpeg -i output.avi -c:v libx264 -c:a aac output_converted.mp4
+
+
+
+ffmpeg -i output.avi -vf scale=640:360 -c:v libx264 -c:a aac output_converted.mp4

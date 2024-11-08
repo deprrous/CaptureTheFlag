@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dota2-low-budget_picker</title>
+    <style>
+        /* Style the body */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .option-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 30px;
+        }
+
+        .option {
+            text-align: center;
+        }
+
+        .option img {
+            width: 308px;
+            height: 316px;
+            object-fit: cover;
+            margin-bottom: 10px;
+}
+
+        .option button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .option button:hover {
+            background-color: #45a049;
+        }
+
+        /* Output container */
+        #output {
+            margin-top: 30px;
+            width: 90%;
+            border: 2px solid #000;
+            padding: 10px;
+            white-space: pre-wrap;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        function showText(folder) {
+            fetch('/get_text?folder=' + folder)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('output').innerHTML = data;
+                });
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Choose your Hero</h1>
+
+    <!-- Options Container -->
+    <div class="option-container">
+        <!-- Option 1 -->
+        <div class="option">
+            <img src="/static/folder1/img1.png" alt="Void Spirit">
+            <button onclick="showText('folder1')">Pick hero</button>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="option">
+            <img src="/static/folder2/img2.png" alt="Earth Spirit">
+            <button onclick="showText('folder2')">Pick hero</button>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="option">
+            <img src="/static/folder3/img3.png" alt="Storm Spirit">
+            <button onclick="showText('folder3')">Pick hero</button>
+        </div>
+    </div>
+
+    <!-- Output Container -->
+    <div id="output">
+        <p>Choose your hero.</p>
+    </div>
+
+</body>
+</html>

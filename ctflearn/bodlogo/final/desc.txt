@@ -1,0 +1,7 @@
+title: Flag exchange
+author: sukheeHuu
+category: Cryptography
+Алимаа ,Болдоо 2 flag-ийг 2 хуваагаад нууцалчхаж ээ.
+Гэхдээ чамд нууцуудыг олоход хэрэгтэй бүх зүйл байна.
+flag format is : ccsCTF{secretOfAlimaa_secretOfBoldoo}  
+Жич : secrets are NaN.

@@ -1,0 +1,24 @@
+def encrypt_flag(flag):
+ 
+    key = get_random_bytes(16)
+    cipher = AES.new(key, AES.MODE_CBC)  
+    padded_flag = pad(flag.encode(), AES.block_size)
+    ciphertext = cipher.encrypt(padded_flag)
+    return key, cipher.iv, ciphertext
+
+with open('flag.txt', 'r') as file:
+    flag = file.read().strip()
+
+key, iv, ciphertext = encrypt_flag(flag)
+
+with open('encrypted_flag.bin', 'wb') as file:
+    file.write(iv + ciphertext)
+
+
+print(f"AES Key (hex): {key.hex()}")
+print(f"Ciphertext (hex): {ciphertext.hex()}")
+print("The encrypted flag has been saved to 'encrypted_flag.bin'.")
+
+AES Key (hex): 1d102d0acc81689fb580eee5155a8f29
+Ciphertext (hex): 18a186ba4254335529dfce79c5f1f607f7be4d072ad39473f34df920ae4401c82f45aca867d9aa8f1d36a929a035cbbb
+The encrypted flag has been saved to 'encrypted_flag.bin'.

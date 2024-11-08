@@ -1,0 +1,1 @@
+flag = ccsCTF{N1C3_0N3(;}

@@ -1,0 +1,9 @@
+The error you encountered, UnicodeDecodeError, typically occurs when trying to read a file that contains characters not supported by the specified encoding. In this case, it seems that your data.txt file might contain characters that are not compatible with the default encoding used by Python's open function, which is cp1252 on Windows.
+
+To fix this issue, you can try the following solutions:
+
+Specify the Encoding Explicitly: You can specify a different encoding (like UTF-8) when reading the file.
+
+Handle Binary Data Properly: When working with binary data, it's usually better to read and write files in binary mode ('rb' and 'wb').
+
+Here’s the updated version of your code, considering these points:

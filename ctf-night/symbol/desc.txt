@@ -1,0 +1,4 @@
+title: Symbolic decimal
+author:sukheeHuu
+category:Cryptography
+$^& нь 467 юм гэнээ xD. You need some hurgan script to find flag
