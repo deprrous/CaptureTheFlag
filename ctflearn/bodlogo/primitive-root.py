@@ -21,12 +21,3 @@ def find_smallest_primitive_root(p):
         if flag:
             return g  # Хамгийн жижиг primitive root олсон
     return None  # Primitive root олдсонгүй
-
-# Таны өгсөн prime тоо
-p = 1375571023180751
-
-primitive_root = find_smallest_primitive_root(p)
-if primitive_root:
-    print(f"{p}-ийн хамгийн жижиг primitive root нь {primitive_root} юм.")
-else:
-    print(f"{p}-ийн primitive root олдсонгүй.")

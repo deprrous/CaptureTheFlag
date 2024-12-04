@@ -18,19 +18,24 @@ def baby_step_giant_step(g, h, p):
         current = (current * g_inv_m) % p
 
     return None  
-p = 1375571023180691
-g = 0x2
-A = 367614718735785 
-B = 129589722679614
+# p = 1375571023180691
+# g = 0x2
+# A = 367614718735785 
+# B = 129589722679614
+
+p = 333870410550569
+g = 3
+A = 146771267179515
 a = baby_step_giant_step(g, A, p)
-b = baby_step_giant_step(g, B, p)
-print(f"The Alimaa x is: {a}") 
-print(f"The Boldoo x is: {b}")  
+print(a)
+# b = baby_step_giant_step(g, B, p)
+# print(f"The Alimaa x is: {a}") 
+# print(f"The Boldoo x is: {b}")  
 
 
-fa = bytes.fromhex(hex(a)[2:])
-fb = bytes.fromhex(hex(b)[2:])
+# fa = bytes.fromhex(hex(a)[2:])
+# fb = bytes.fromhex(hex(b)[2:])
 
 
-print("Alimaa's a secret is: ",fa)
-print("Boldoo's secret is: ",fb)
+# print("Alimaa's a secret is: ",fa)
+# print("Boldoo's secret is: ",fb)
